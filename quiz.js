@@ -11,12 +11,12 @@ const questions = [
   },
   {
     Number: 2,
-    question: "Which of the following element is responsible for making the text bold in HTML? ",
+    question: "What does View Source do? ",
     answers: [
-      { text: "pre", correct: "false" },
-      { text: "b", correct: "false" },
-      { text: "br", correct: "false" },
-      { text: "a", correct: "true" },
+      { text: "Nothing", correct: "false" },
+      { text: "Opens a new website.", correct: "false" },
+      { text: "opens a new page", correct: "false" },
+      { text: "Brings up a note pad with the HTML code already used for the site", correct: "true" },
     ],
   },
   {
@@ -56,7 +56,7 @@ const questions = [
        
        { text: "method", correct: "false" },
        { text: "action", correct: "false" },
-       { text: "Both (a) & (b)", correct: "true" },
+       { text: "Both method & action", correct: "true" },
        { text: "None of the above", correct: "false" },
      ],
    },
