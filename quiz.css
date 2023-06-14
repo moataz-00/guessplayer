@@ -112,3 +112,21 @@ footer{
     padding: 1%;
     
 }
+
+@media only screen and (max-width: 600px){
+    img{
+        width: 50%;
+    }
+
+    ul{
+        color: #001e4d;
+        font-size: smaller;
+        
+        
+        justify-content:space-between;
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+    }
+    
+};
