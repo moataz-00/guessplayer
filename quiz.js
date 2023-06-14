@@ -1,52 +1,147 @@
 const questions = [
   {
     Number: 1,
-    question: "1- Won a world cup <br><br> 2- Played for : Bayern Munich , FC Köln , Arsenal , Inter , Antalyaspor , Vissel Kobe<br><br> 3- Current club : Górnik Zabrze<br><br> 4- Teammates : Miroslav Klose , Oliver Kahn , Mikel Arteta <br><br> ",
+    question: "HTML stands for ",
     answers: [
-      { text: "Ozil", correct: "false" },
-      { text: "Podolski", correct: "true" },
-      { text: "Philipp Lahm", correct: "false" },
-      { text: "Bastian Schweinsteiger", correct: "false" },
+      { text: "HighText Machine Language", correct: "false" },
+      { text: "HyperText Markup Language", correct: "true" },
+      { text: "HyperText and links Markup Language", correct: "false" },
+      { text: "None of these", correct: "false" },
     ],
   },
   {
     Number: 2,
-    question: "1- Won English FA Cup , a world cup<br><br>2- Played for : Hannover 96 , Werder Bremen , Arsenal <br><br> 3- Retired <br><br> 4- Teammates : Naldo , Alex Oxlade-Chamberlain  ",
+    question: "Which of the following element is responsible for making the text bold in HTML? ",
     answers: [
-      { text: "Nuri Sahin", correct: "false" },
-      { text: "Sebastian Kehl", correct: "false" },
-      { text: "Martín Demichelis", correct: "false" },
-      { text: "Per Mertesacker", correct: "true" },
+      { text: "pre", correct: "false" },
+      { text: "b", correct: "false" },
+      { text: "br", correct: "false" },
+      { text: "a", correct: "true" },
     ],
   },
   {
     Number: 3,
-    question: "1- Won Saudi Cup<br><br> 2- Play in a world cup<br><br> 3- Played for : Al-Hilal , Al-Fateh<br><br> 4- Teammates : Moussa Marega , Mohamed Kanno ",
+    question: "The correct sequence of HTML tags for starting a webpage is ",
     answers: [
-      { text: "Luciano Vietto", correct: "false" },
-      { text: "Khalifah Al-Dawsari", correct: "true" },
-      { text: "Salem Al-Dawsari", correct: "false" },
-      { text: "Mohammed Al-Fatil", correct: "false" },
+      { text: "Head, Title, HTML, body", correct: "false" },
+      { text: "HTML, Head, Title, Body", correct: "true" },
+      { text: "HTML, Head, Title, Body", correct: "false" },
+      { text: "HTML, Body, Title, Head", correct: "false" },
     ],
   },
   {
     Number: 4,
-    question: "1- Won Conference League winner<br><br>2- Played for : AC Milan , Genoa , Monaco , AS Roma<br><br> 3- Teammates : Edin Dzeko , Radja Nainggolan , José Crespo , Fabinho ",
+    question: "Which of the following tag is used for inserting the largest heading in HTML?",
     answers: [
-      { text: "Stephan El Shaarawy", correct: "true" },
-      { text: "Mohamed Salah", correct: "false" },
-      { text: "Paulo Dybala", correct: "false" },
-      { text: "Lorenzo Pellegrini", correct: "false" },
+      { text: "h1", correct: "true" },
+      { text: "h3", correct: "false" },
+      { text: "h5", correct: "false" },
+      { text: "h6", correct: "false" },
     ],
   },
+  {
+    Number: 5,
+    question: "Input tag is",
+    answers: [
+      { text: "an empty tag.", correct: "true" },
+      { text: "a format tag.", correct: "false" },
+      { text: "All of the above", correct: "false" },
+      { text: "None of the above", correct: "false" },
+    ],
+  },
+   {
+     Number: 6,
+     question: " Which of the following tag is used to make the underlined text?",
+     answers: [
+       
+       { text: "method", correct: "false" },
+       { text: "action", correct: "false" },
+       { text: "Both (a) & (b)", correct: "true" },
+       { text: "None of the above", correct: "false" },
+     ],
+   },
+   {
+     Number: 7,
+     question: "The tags in HTML are",
+     answers: [
+       
+       { text: "in lowercase", correct: "false" },
+       { text: "case-sensitive", correct: "false" },
+       { text: "in upper case", correct: "false" },
+       { text: "not case sensitive", correct: "true" },
+     ],
+   },
+   {
+     Number: 8,
+     question: "Who is the father of HTML?",
+     answers: [
+       { text: "Tim Berners-Lee", correct: "true" },
+       { text: "Rasmus Lerdorf", correct: "false" },
+       { text: "Brendan Eich", correct: "false" },
+       { text: "Sergey Brin", correct: "false" },
+     ],
+   },
+   {
+     Number: 9,
+     question: "Which of the following is used to read an HTML page and render it?",
+     answers: [
+       
+       { text: "Web server", correct: "false" },
+       { text: " Web network", correct: "false" },
+       { text: "Web browser", correct: "true" },
+       { text: " Web matrix", correct: "false" },
+     ],
+   },
+   {
+     Number: 10,
+     question: "In which part of the HTML metadata is contained?",
+     answers: [
+       { text: "head tag", correct: "true" },
+       { text: "title tag", correct: "false" },
+       { text: "html tag", correct: "false" },
+       { text: "body tag", correct: "false" },
+     ],
+   },
 ];
 
 const questionelememt = document.getElementById("question");
 const answerbtn = document.getElementById("answer-buttons");
 const nextbtn = document.getElementById("next-btn");
 
+
+let haveIt = [];
+function generateUniqueRandom(maxNr) {
+    //Generate random number
+    let random = (Math.random() * maxNr).toFixed();
+
+    //Coerce to number by boxing
+    random = Number(random);
+
+    if(!haveIt.includes(random)) {
+        haveIt.push(random);
+        return random;
+    } else {
+        if(haveIt.length <= maxNr) {
+          //Recursively generate number
+         return  generateUniqueRandom(maxNr);
+        } else {
+          
+          showscore();
+          console.log('No more numbers available.')
+          
+          
+        }
+        
+    }
+
+    
+}
+
+
 function startquiz() {
-  index = 0;
+    
+  index = generateUniqueRandom(9);
+  console.log(index);
   score = 0;
   nextbtn.innerHTML = "Next";
   showquestion();
@@ -111,6 +206,8 @@ function selectanswer(e) {
   nextbtn.style.display = "block";
 }
 
+
+//score 
 function showscore(){
     resetstate();
     questionelememt.innerHTML=`you scored ${score} out of ${questions.length}!` ;
@@ -119,7 +216,8 @@ function showscore(){
 }
 
 function next(){
-    index++;
+    index=generateUniqueRandom(9);
+    console.log(index);
     if(index<questions.length){
         showquestion();
 
@@ -133,7 +231,7 @@ nextbtn.addEventListener("click",()=>{
     if(index<questions.length){
         next();
     }else{
-        startquiz();
+        location.reload();
     }
 })
 
